@@ -29,11 +29,13 @@ resource "google_compute_instance_iam_binding" "instance_binding" {
   instinstance_name = google_compute_instance.instance.name
   role = "roles/compute.networkUser"
   members = ["allUsers"]
+  # oak9: google_compute_instance_iam_binding.members is not configured
 }
 
 resource "google_compute_instance_iam_member" "instance_member" {
   instinstance_name = google_compute_instance.instance.name
   member = "allAuthenticatedUsers"
+  # oak9: google_compute_instance_iam_member.member is not configured
   role = "roles/compute.networkUser"
 }
 
